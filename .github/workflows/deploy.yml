@@ -1,4 +1,4 @@
-name: Deploy Network Stack for ECS
+name: Deploy Network Stack and ECS stack
 on:
   push:
     branches:
