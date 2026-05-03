@@ -28,6 +28,7 @@ jobs:
           aws cloudformation deploy \
             --template-file templates/ecs-stack.cf.yml \
             --stack-name ecs-app-stack \
+            --capabilities CAPABILITY_NAMED_IAM \
             --region us-east-1 \
             --parameter-overrides \
               VpcId=$(aws cloudformation describe-stacks --stack-name ecs-network-stack --query "Stacks[0].Outputs[?OutputKey=='VpcId'].OutputValue" --output text) \
